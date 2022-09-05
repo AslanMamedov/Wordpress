@@ -1,0 +1,16 @@
+// TO %
+@function prc($pxOnce, $pxTwo) {
+	@return calc($pxOnce /  $pxTwo) * 100%;
+}
+// REM
+@function rem($px) {
+	@return calc($px / 16) + rem;
+}
+
+// EM
+@function em($px) {
+	@return calc($px / 16) + em;
+}
+
+
+

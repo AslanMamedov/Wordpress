@@ -1,0 +1,67 @@
+
+
+// Адаптивный шрифт
+@mixin dynamicFont($pcSize, $mobSize) {
+	$addSize: $pcSize - $mobSize;
+	$maxWidthContainer: $maxWidthContainer - 320;
+	font-size: calc(
+		#{$mobSize + px} + #{$addSize} *
+			((100vw - 320px) / #{$maxWidthContainer})
+	);
+}
+
+//---------------------------------------------------------------------------------------------------------
+// Адаптивный размер
+// @include dynamicValue('font-size', 40, 24, 2)
+@mixin dynamicValue($property, $startSize, $minSize, $type) {
+	$addSize: $startSize - $minSize;
+	@if $type==1 {
+		#{$property}: $startSize + px;
+		@media (max-width: #{$maxWidthContainer + px}) {
+			#{$property}: calc(
+				#{$minSize + px} + #{$addSize} *
+					((100vw - 375px) / #{$maxWidthContainer - 375})
+			);
+		}
+	} @else if $type==2 {
+		#{$property}: $startSize + px;
+		@media (min-width: #{$maxWidthContainer + px}) {
+			#{$property}: calc(
+				#{$minSize + px} + #{$addSize} *
+					((100vw - 375px) / #{$maxWidth - 375})
+			);
+		}
+	} @else {
+		#{$property}: calc(
+			#{$minSize +
+				px} +
+				#{$addSize} *
+				((100vw - 375px) / #{$maxWidth - 375})
+		);
+	}
+}
+
+//----------------------------------------------------------------------------------------------------------
+// @include dynamicProperty('font-size', 15, 30, 960);
+@mixin dynamicProperty($property, $minValue, $maxValue, $sizeWidthPage) {
+	#{$property}: $maxValue;
+	@media (min-width: ($sizeWidthPage + px)) {
+		#{$property}: $minValue + px;
+	}
+}
+// $property - Название свойства
+// $minValue - MIN размер свойства;
+// $maxValue - MAX размер свойства;
+// $sizeWidthPage - Минимальная ширина макета(страницы)
+
+//----------------------------------------------------------------------------------------------------------
+@mixin image-set($pathToImage) {
+	background-image: url("#{$pathToImage}.jpg");
+	/* stylelint-disable-next-line declaration-block-no-duplicate-properties */
+	background-image: image-set(
+		/* stylelint-disable-next-line function-comma-newline-after */
+			"#{$pathToImage}.avif"type("image/avif"),
+		"#{$pathToImage}.webp"type("image/webp"),
+		"#{$pathToImage}.jpg"type("image/jpg")
+	);
+}

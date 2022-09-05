@@ -1,0 +1,24 @@
+.footer {
+	background-color: #1a1a1a;
+	padding: 61px 0 69px 0;
+	&__container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		font-family: Roboto;
+		font-size: 15px;
+		line-height: 21px;
+		font-weight: 300;
+		text-decoration: underline;
+		color: #888888;
+		text-align: center;
+	}
+	&__security {
+		a {
+			color: #888888;
+		}
+	}
+	&__tel {
+		color: #888888;
+	}
+}

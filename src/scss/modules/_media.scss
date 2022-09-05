@@ -1,0 +1,67 @@
+@mixin _1920 {
+	@media (max-width: em($breackpoint_xxxl)) {
+		@content;
+	}
+}
+@mixin _1280-1920 {
+	@media (min-width: em($breackpoint_xxl)) and (max-width: em($breackpoint_xxxl)){
+		@content;
+	}
+}
+@mixin _1280 {
+	@media (max-width: em($breackpoint_xxl)){
+		@content;
+	}
+}
+@mixin _1024-1280 {
+	@media (min-width: em($breackpoint_xl)) and (max-width: em($breackpoint_xxl)) {
+		@content;
+	}
+}
+@mixin _1024 {
+	@media (max-width: em($breackpoint_xl)) {
+		@content;
+	}
+}
+@mixin _768-1024 {
+	@media (min-width: em($breackpoint_l)) and (max-width: em($breackpoint_xl)){
+		@content;
+	}
+}
+@mixin _768 {
+	@media (max-width: em($breackpoint_l)){
+		@content;
+	}
+}
+@mixin _480-768 {
+	@media (min-width: em($breackpoint_m)) and (max-width: em($breackpoint_l)){
+		@content;
+	}
+}
+@mixin _480 {
+	@media (max-width: em($breackpoint_m)){
+		@content;
+	}
+}
+@mixin _320-480 {
+	@media (min-width: em($breackpoint_s)) and (max-width: em($breackpoint_m)){
+		@content;
+	}
+}
+@mixin _320 {
+	@media (max-width: em($breackpoint_s)){
+		@content;
+	}
+}
+@mixin _mediaMax($breackpoint) {
+	@media (max-width: em($breackpoint)){
+		@content;
+	}
+}
+@mixin _mediaMin($breackpoint) {
+	@media (max-width: em($breackpoint)){
+		@content;
+	}
+}
+
+

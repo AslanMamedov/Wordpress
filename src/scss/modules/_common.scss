@@ -1,0 +1,47 @@
+body {
+	font-size: 20px;
+	height: 100%;
+}
+
+.wrapper {
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+.main {
+	flex: 1 1 auto;
+}
+
+.none {
+	display: none !important;
+}
+
+.visually-hidden {
+	position: absolute;
+	opacity: 0;
+	visibility: hidden;
+	width: 0px;
+	height: 0px;
+	display: block;
+	margin-left: -10000px;
+	background: transparent;
+	font-size: 0;
+}
+
+.dis-scroll {
+	position: fixed;
+	left: 0;
+	top: 0;
+	overflow: hidden;
+	width: 100%;
+	height: 100vh;
+	overscroll-behavior: none;
+}
+
+.container {
+	// @include dynamicValue("max-width", 1310, 320, 0);
+	max-width: rem($maxWidthContainer);
+	margin: 0 auto;
+	@include dynamicValue("padding-left", 15, 10, 0);
+	@include dynamicValue("padding-right", 15, 10, 0);
+}

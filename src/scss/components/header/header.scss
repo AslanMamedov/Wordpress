@@ -1,0 +1,180 @@
+// @include dynamicValue('font-size', 40, 24, 2)
+
+.header {
+	background: url("../assets/img/images/layer_2_15.jpg") center center / cover
+		no-repeat;
+	min-height: 100vh;
+
+	@include dynamicValue("padding-bottom", 20, 15, 0);
+	// logo
+	&__logo-container {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		padding-top: 39px;
+		@include dynamicValue("margin-bottom", 53, 15, 0);
+		// margin-bottom: 53px;
+	}
+	&__logo {
+		margin-bottom: 14px;
+	}
+	&__logo-title {
+		font-family: Roboto;
+		font-size: 15px;
+		line-height: 24px;
+		font-weight: 500;
+		text-transform: uppercase;
+		color: #ffffff;
+	}
+	// Description
+	&__descr {
+		display: flex;
+		flex-direction: column;
+	}
+	&__descr-title,
+	&__descr-subtitle,
+	&__descr-text {
+		font-family: Roboto;
+		font-weight: 900;
+		text-transform: uppercase;
+		text-align: center;
+	}
+	&__descr-title {
+		color: #f9bf3b;
+		@include dynamicValue("font-size", 41, 17, 0);
+
+		// font-size: 41px;
+		@include dynamicValue("margin-bottom", 21, 10, 0);
+
+		// margin-bottom: 21px;
+	}
+	&__descr-subtitle {
+		color: #ffffff;
+		@include dynamicValue("font-size", 80, 30, 0);
+		// font-size: 80px;
+		@include dynamicValue("margin-bottom", 30, 15, 0);
+
+		// margin-bottom: 30px;
+		position: relative;
+		&::after,
+		&::before {
+			content: "";
+			display: block;
+			@include dynamicValue("width", 292, 55, 0);
+
+			// width: 292px;
+
+			height: 2px;
+			background-color: #fff;
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+		&::after {
+			right: 50%;
+			transform: translateX(200%);
+			@media (min-width: 1280px) and (max-width: 1500px) {
+				right: 48%;
+			}
+			@media (min-width: 768px) and (max-width: 1280px) {
+				right: 45%;
+			}
+			@media (min-width: 480px) and (max-width: 768px) {
+				right: 38%;
+			}
+			@media (min-width: 320px) and (max-width: 480px) {
+				right: 30%;
+			}
+		}
+		&::before {
+			left: 50%;
+			transform: translateX(-200%);
+			@media (min-width: 1280px) and (max-width: 1500px) {
+				left: 48%;
+			}
+			@media (min-width: 768px) and (max-width: 1280px) {
+				left: 45%;
+			}
+			@media (min-width: 480px) and (max-width: 768px) {
+				left: 38%;
+			}
+			@media (min-width: 320px) and (max-width: 480px) {
+				left: 30%;
+			}
+		}
+	}
+	&__descr-text {
+		color: #f9bf3b;
+		@include dynamicValue("font-size", 41, 15, 0);
+
+		// font-size: 41px;
+		@include dynamicValue("margin-bottom", 23, 15, 0);
+	}
+	// Info
+	&__lead {
+		font-family: Roboto;
+		font-size: 21px;
+		line-height: 28px;
+		@include dynamicValue("width", 1120, 320, 0);
+		text-align: center;
+		margin: 0 auto;
+		@include dynamicValue("margin-bottom", 69, 40, 0);
+
+		// margin-bottom: 69px;
+
+		@media (max-width: 1024px) {
+			br {
+				display: none;
+			}
+		}
+		font-weight: 300;
+		color: #ffffff;
+		strong {
+			font-weight: 700;
+			color: #f9bf3b;
+		}
+	}
+
+
+	&__more-info {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	&__more-title {
+		font-family: Roboto;
+		font-size: 15px;
+		line-height: 24px;
+		font-weight: 100;
+		text-transform: uppercase;
+		color: #ffffff;
+		@include dynamicValue("margin-bottom", 13, 5, 0);
+	}
+}
+
+.btn {
+	display: block;
+	margin: 0 auto;
+	text-align: center;
+	@include dynamicValue("width", 330, 300, 0);
+
+	// width: 330px;
+	height: 80px;
+	background-color: #3ab6da;
+	font-size: 20px;
+	font-family: Roboto;
+	font-weight: 400;
+	text-transform: uppercase;
+	text-shadow: -1px -1px 0px rgba(0, 0, 0, 0.21);
+	color: #ffffff;
+	padding: 32px 0px;
+	border-radius: 5px;
+	@include dynamicValue("margin-bottom", 69, 40, 0);
+	// margin-bottom: 69px;
+	&:hover {
+		color: #3ab6da;
+		background-color: #ffff;
+		border: 1px solid #3ab6da;;
+		transition: all 0.3s ease-in-out;
+	}
+}
